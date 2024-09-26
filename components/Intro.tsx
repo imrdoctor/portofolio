@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
-const Hero = () => {
+const Intro = () => {
   const [showConfetti, setShowConfetti] = useState(false);
   const [removeConfetti, setRemoveConfetti] = useState(false); // حالة لحذف الكونفيتي
 
@@ -12,7 +12,7 @@ const Hero = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowConfetti(true);
-    }, 2600); // تأخير 2620 مللي ثانية حتى يظهر الكونفيتي
+    }, 2940); // تأخير 2620 مللي ثانية حتى يظهر الكونفيتي
 
     return () => clearTimeout(timer);
   }, []);
@@ -48,37 +48,38 @@ const Hero = () => {
           width={1920}
           height={1080}
           objectFit="cover"
-          className="h-screen w-screen brightness-90 brightness-75"
+          className="h-screen w-screen brightness-90 brightness-50"
         />
       </motion.div>
 
       <div className="absolute inset-0 z-[9999] overflow-hidden">
-        <motion.p
-          className="p1 text-9xl text-white max-[660px]:text-8xl max-[484px]:text-7xl text-left flex items-center justify-start font-bold absolute top-[5%] left-[5%]"
-          initial={{ scale: 0, opacity: 0, rotate: 0, left: "-100%", top: "-10%" }}
-          animate={{ scale: 1, opacity: 1, rotate: [0, -5, 5, 0], left: "10%", top: "20%" }}
-          transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
-        >
-          Welcome
-        </motion.p>
+      <motion.p
+  className="p1 text-9xl bg-gradient-to-t from-orange-200 to-white text-transparent bg-clip-text max-[660px]:text-8xl max-[484px]:text-7xl text-left flex items-center justify-start font-bold absolute top-[5%] left-[5%]"
+  initial={{ scale: 0, opacity: 0, rotate: 0, left: "-100%", top: "-10%" }}
+  animate={{ scale: 1, opacity: 1, rotate: [0, -5, 5, 0], left: "10%", top: "24%" }}
+  transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
+>
+  Welcome
+</motion.p>
 
-        <motion.p
-          className="p1 text-9xl text-white max-[660px]:text-8xl max-[484px]:text-7xl text-center flex items-center justify-center font-bold absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
-          initial={{ scale: 0, opacity: 0, top: "-150%", left: "20%" }}
-          animate={{ scale: 1, opacity: 1, rotate: [0, -5, 5, 0], top: "48%", left: "47%" }}
-          transition={{ duration: 1.5, ease: "easeInOut", delay: 1 }}
-        >
-          In
-        </motion.p>
+<motion.p
+  className="p1 text-9xl bg-gradient-to-t from-orange-200 to-white text-transparent bg-clip-text max-[660px]:text-8xl max-[484px]:text-7xl text-left flex items-center justify-start font-bold absolute top-[5%] left-[5%]"
+  initial={{ scale: 0, opacity: 0, top: "-150%", left: "20%" }}
+  animate={{ scale: 1, opacity: 1, rotate: [0, -5, 5, 0], top: "48%", left: "47%" }}
+  transition={{ duration: 1.5, ease: "easeInOut", delay: 1 }}
+>
+  In
+</motion.p>
 
-        <motion.p
-          className="p1 text-9xl text-white max-[660px]:text-8xl max-[484px]:text-7xl text-right flex items-center justify-end font-bold absolute bottom-[5%] right-[5%] text-center"
-          initial={{ scale: 0, opacity: 0, rotate: 0, right: "-100%", bottom: "-10%" }}
-          animate={{ scale: 1, opacity: 1, rotate: [0, -5, 5, 0], right: "10%", bottom: "10%" }}
-          transition={{ duration: 1.5, ease: "easeInOut", delay: 1.5 }}
-        >
-          My Portofolio
-        </motion.p>
+<motion.p
+  className="p1 text-9xl bg-gradient-to-t from-orange-200 to-white text-transparent bg-clip-text max-[660px]:text-8xl max-[484px]:text-7xl text-right flex items-center justify-end font-bold absolute bottom-[5%] right-[5%]"
+  initial={{ scale: 0, opacity: 0, rotate: 0, right: "-100%", bottom: "-10%" }}
+  animate={{ scale: 1, opacity: 1, rotate: [0, -5, 5, 0], right: "5%", bottom: "10%" }}
+  transition={{ duration: 1.5, ease: "easeInOut", delay: 1.5 }}
+> 
+  My Portfolio
+</motion.p>
+
 
         {/* تأثير الكونفيتي المتنوع */}
         {showConfetti && !removeConfetti && <ConfettiAnimation />}
@@ -107,11 +108,11 @@ const ConfettiAnimation = () => {
 
   return (
     <>
-      {[...Array(200)].map((_, index) => {
+      {[...Array(250)].map((_, index) => {
         const shape = shapes[Math.floor(Math.random() * shapes.length)];
-        const size = Math.random() * 10 + 5; // حجم الكونفيتي
+        const size = Math.random() * 12 + 6; // حجم الكونفيتي
         const angle = Math.random() * 360; // زاوية عشوائية
-        const distance = Math.random() * 1000 + 500; // المسافة العشوائية للخروج
+        const distance = Math.random() * 850 + 350; // المسافة العشوائية للخروج
 
         return (
           <motion.div
@@ -150,4 +151,4 @@ const ConfettiAnimation = () => {
   );
 };
 
-export default Hero;
+export default Intro;
