@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {DotPattern} from "@/components/ui/dot-pattern";
+import Covertext from "./textcover";
 import { cn } from "@/lib/utils";
 
 export const TextHoverEffect = ({
@@ -130,15 +131,17 @@ export const TextHoverEffect = ({
 };
 
 export default function HomeSec() {
-  return (
-    <div className="text-center flex justify-center h-[75vh]">
-      <TextHoverEffect text="Take a Peek" duration={0.0} />
+  return (<>
+  <TextHoverEffect text="Take a Peek" duration={0} />
     <DotPattern
         className={cn(
           "[mask-image:radial-gradient(950px_circle_at_center,white,transparent)]",
         )}
-      />
-    </div>
+        />
+        
+        </>
+
+    
   );
 }
 
