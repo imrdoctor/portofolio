@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-
-const Intro = ({ onEnd }) => {
+interface IntroProps {
+  onEnd: () => void;
+}
+const Intro: React.FC<IntroProps> = ({ onEnd }) => {
   const [showConfetti, setShowConfetti] = useState(false);
   const [removeConfetti, setRemoveConfetti] = useState(false);
   const [slideOut, setSlideOut] = useState(false); 

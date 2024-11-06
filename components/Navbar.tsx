@@ -1,7 +1,6 @@
-import { useState } from 'react';
+"use client";
 
 const Navbar: React.FC = () => {
-  const [showMenu, setShowMenu] = useState(false);
 
   return (
     <>

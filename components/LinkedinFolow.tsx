@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react"; // استيراد useState فقط
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -7,8 +6,12 @@ import AnimatedGradientText from "@/components/ui/animated-gradient-text";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faX } from "@fortawesome/free-solid-svg-icons";
+interface AnimatedGradientTextDemoProps {
+  show: boolean;
+  setShow: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-export default function AnimatedGradientTextDemo({ show, setShow }) {
+export default function AnimatedGradientTextDemo({ show, setShow } : AnimatedGradientTextDemoProps) {
 
   const handleHide = () => {
     setShow(false);
