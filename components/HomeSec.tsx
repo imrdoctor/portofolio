@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {DotPattern} from "@/components/ui/dot-pattern";
-import Covertext from "./textcover";
 import { cn } from "@/lib/utils";
 
 export const TextHoverEffect = ({
@@ -14,7 +13,7 @@ export const TextHoverEffect = ({
   const svgRef = useRef<SVGSVGElement>(null);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
-  const [maskPosition, setMaskPosition] = useState({ cx: "10%", cy: "10%" });
+  const [maskPosition, setMaskPosition] = useState({ cx: "1%", cy: "1%" });
 
   useEffect(() => {
     if (svgRef.current && cursor.x !== null && cursor.y !== null) {
@@ -88,7 +87,7 @@ export const TextHoverEffect = ({
         textAnchor="middle"
         dominantBaseline="middle"
         strokeWidth="0.3"
-        className="font-[helvetica] font-bold stroke-neutral-700 dark:stroke-neutral-800 fill-transparent text-[3.10rem]"
+        className="font-[helvetica] font-bold stroke-neutral-400 dark:stroke-neutral-700 fill-transparent text-[6.2rem] md:text-[5.5rem]"
         style={{ opacity: hovered ? 0.7 : 0 }}
       >
         {text}
@@ -100,7 +99,7 @@ export const TextHoverEffect = ({
         textAnchor="middle"
         dominantBaseline="middle"
         strokeWidth="0.6"
-        className="font-[helvetica] font-bold fill-transparent text-[3.10rem] stroke-neutral-700 dark:stroke-neutral-800"
+        className="font-[helvetica] font-bold fill-transparent text-[6.2rem] md:text-[5.5rem] stroke-neutral-700 dark:stroke-neutral-800"
         initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
         animate={{
           strokeDashoffset: 0,
@@ -122,7 +121,7 @@ export const TextHoverEffect = ({
         stroke="url(#textGradient)"
         strokeWidth="0.3"
         mask="url(#textMask)"
-        className="font-[helvetica] font-bold fill-transparent text-[3.10rem]"
+        className="font-[helvetica] font-bold fill-transparent text-[6.2rem] md:text-[5.5rem]"
       >
         {text}
       </text>
@@ -132,10 +131,10 @@ export const TextHoverEffect = ({
 
 export default function HomeSec() {
   return (<>
-  <TextHoverEffect text="Take a Peek" duration={0} />
+  <TextHoverEffect text="Unveil" duration={0.3} />
     <DotPattern
         className={cn(
-          "[mask-image:radial-gradient(950px_circle_at_center,white,transparent)]",
+          "[mask-image:radial-gradient(720px_circle_at_center,white,transparent)]",
         )}
         />
         
